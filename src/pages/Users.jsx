@@ -39,7 +39,7 @@ function Users() {
       {error && <p className="message error">{error}</p>}
       {!loading && !error && <div className="cards">
         {filteredUsers.map((user) => (
-          <Link className="card card-link" to={`/users/${user.id}`} key={user.id}>
+          <Link className="card card-link user-card" to={`/users/${user.id}`} key={user.id}>
             <div className="card-top"><span className="avatar">{user.name[0]}</span><span className="id">ID: {user.id}</span></div>
             <h3>{user.name}</h3><p className="muted">@{user.username}</p>
             <p>{user.email}</p><p>{user.address.city}</p>

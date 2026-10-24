@@ -34,7 +34,7 @@ function Albums() {
       {loading && <p className="message">Загружаем альбомы...</p>}
       {error && <p className="message error">{error}</p>}
       {!loading && !error && <div className="cards">
-        {filteredAlbums.map((album) => <Link className="card card-link" to={`/albums/${album.id}`} key={album.id}><div className="card-top"><span className="tag">Album</span><span className="id">ID: {album.id}</span></div><h3>{album.title}</h3><p className="muted">User ID: {album.userId}</p></Link>)}
+        {filteredAlbums.map((album) => <Link className="card card-link album-card" to={`/albums/${album.id}`} key={album.id}><div className="card-top"><span className="tag">Album</span><span className="id">ID: {album.id}</span></div><h3>{album.title}</h3><p className="muted">User ID: {album.userId}</p></Link>)}
       </div>}
     </section>
   );

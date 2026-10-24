@@ -34,7 +34,7 @@ function Todos() {
       {loading && <p className="message">Загружаем задачи...</p>}
       {error && <p className="message error">{error}</p>}
       {!loading && !error && <div className="cards">
-        {filteredTodos.map((todo) => <Link className="card card-link" to={`/todos/${todo.id}`} key={todo.id}><div className="card-top"><span className="tag">Todo · ID {todo.id}</span><span className={todo.completed ? "status done" : "status pending"}>{todo.completed ? "Completed" : "Not completed"}</span></div><h3>{todo.title}</h3><p className="muted">User ID: {todo.userId}</p></Link>)}
+        {filteredTodos.map((todo) => <Link className={`card card-link todo-card ${todo.completed ? "completed" : "pending"}`} to={`/todos/${todo.id}`} key={todo.id}><div className="card-top"><span className="tag">Todo · ID {todo.id}</span><span className={todo.completed ? "status done" : "status pending"}>{todo.completed ? "Completed" : "Not completed"}</span></div><h3>{todo.title}</h3><p className="muted">User ID: {todo.userId}</p></Link>)}
       </div>}
     </section>
   );

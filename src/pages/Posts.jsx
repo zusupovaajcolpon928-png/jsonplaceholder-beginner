@@ -34,7 +34,7 @@ function Posts() {
       {loading && <p className="message">Загружаем публикации...</p>}
       {error && <p className="message error">{error}</p>}
       {!loading && !error && <div className="cards">
-        {filteredPosts.map((post) => <Link className="card text-card card-link" to={`/posts/${post.id}`} key={post.id}><div className="card-top"><span className="tag">Post</span><span className="id">ID: {post.id}</span></div><h3>{post.title}</h3><p>{post.body}</p><p className="muted">User ID: {post.userId}</p></Link>)}
+        {filteredPosts.map((post) => <Link className="card text-card card-link post-card" to={`/posts/${post.id}`} key={post.id}><div className="card-top"><span className="tag">Post</span><span className="id">ID: {post.id}</span></div><h3>{post.title}</h3><p>{post.body}</p><p className="muted">User ID: {post.userId}</p></Link>)}
       </div>}
     </section>
   );

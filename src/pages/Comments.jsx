@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Comments.css";
 
 function Comments() {
   const [comments, setComments] = useState([]);
@@ -35,7 +36,12 @@ function Comments() {
       {loading && <p className="message">Загружаем комментарии...</p>}
       {error && <p className="message error">{error}</p>}
       {!loading && !error && <div className="cards">
-        {filteredComments.map((comment) => <Link className="card text-card card-link" to={`/comments/${comment.id}`} key={comment.id}><div className="card-top"><span className="tag">Comment</span><span className="id">ID: {comment.id}</span></div><h3>{comment.name}</h3><p>{comment.body}</p><p className="muted">{comment.email}</p><p className="muted">Post ID: {comment.postId}</p></Link>)}
+        {filteredComments.map((comment) => <Link className="card card-link comment-card" to={`/comments/${comment.id}`} key={comment.id}>
+          <div className="comment-card-head"><span className="comment-quote" aria-hidden="true">“</span><span className="comment-number">COMMENT #{comment.id}</span></div>
+          <h3>{comment.name}</h3>
+          <p className="comment-body">{comment.body}</p>
+          <div className="comment-footer"><span className="comment-author">{comment.email}</span><span className="comment-post">POST #{comment.postId}</span></div>
+        </Link>)}
       </div>}
     </section>
   );

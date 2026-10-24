@@ -38,6 +38,15 @@ button { cursor: pointer; }
 .card h3 { margin: 0 0 10px; font-size: 16px; line-height: 1.45; overflow-wrap: anywhere; }
 .card p { margin: 8px 0 0; color: #686e82; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
 .card p.muted { color: #9196a7; font-size: 12px; }
+.user-card { border-top: 3px solid #3a9f89; }
+.user-card .avatar { color: #187c68; background: #e1f5f0; }
+.post-card { border-top: 3px solid #e5a33a; background: #fffdf8; }
+.post-card .tag { color: #936018; background: #fff1d4; }
+.todo-card { border-left: 4px solid #aab1c0; }
+.todo-card.completed { border-left-color: #2c9a70; background: #f7fcf9; }
+.todo-card.pending { border-left-color: #e2ae45; background: #fffdf7; }
+.album-card { border-bottom: 3px solid #897bd9; background: #faf9ff; }
+.album-card .tag { color: #5545a5; background: #eeebff; }
 .text-card { display: flex; flex-direction: column; }
 .text-card h3 { text-transform: none; }
 .status { border-radius: 20px; padding: 5px 9px; font-size: 11px; font-weight: 700; }
